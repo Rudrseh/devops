@@ -1,7 +1,7 @@
 FROM node
 
-RUN npm install -y 
-
 COPY . .
 
-CMD ['npm', 'start']
+RUN npm install
+
+CMD["npm", "run","dev"]
