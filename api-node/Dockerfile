@@ -24,6 +24,6 @@ COPY --chown=node:node ./healhcheck.js ./
 
 COPY --chown=node:node ./src/ .
 
-EXPOSE 3000 
+EXPOSE 8080
 
 CMD ["node", "index.js"]
