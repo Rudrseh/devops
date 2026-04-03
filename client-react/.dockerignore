@@ -1,3 +1,4 @@
 npm_modules 
 .npm
 
+if it contains ".dst" remove it 
