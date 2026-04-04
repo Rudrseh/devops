@@ -1,1 +1,38 @@
+services:
+ api-node:
+  image: api-node
+  build:
+   context: ../api-node/
+   dockerfile: ../../api-node/Dockerfile 
+  init: true
+  depends_on:
+    - db
+  environment: 
+    - DATABASE_URL=postgres://postgres:foobarbaz@db:5432/postgres
+  ports:
+    - "3000:3000"
+  networks:
+    - frontend
+    - backend
+  restart: unless-stopped
+ db:
+  image: postgres:15.1-alpine
+  volumes:
+    - postgres-data:/var/lib/postgresql/data
+  environment:
+    - POSTGRES_PASSWORD=foobarbaz
+  ports:
+    - "5432:5432"
+  networks:
+    - backend
+volumes:
+  postgres-data:
+networks:
+  frontend:
+  backend:
 
+
+
+
+    
+  
