@@ -1,16 +1,16 @@
-FROM node:3.16-alpine as base
+FROM node:3.16-alpine AS base
 
 WORKDIR /usr/src/app
 
 COPY package*.json ./
 
-FROM base as dev
+FROM base AS dev
 
 COPY . .
 
 CMD ["npm", "run", "dev"]
 
-FROM base as prod
+FROM base AS prod
 
 ENV NODE_ENV=production 
 

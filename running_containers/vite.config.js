@@ -17,7 +17,7 @@ export default defineConfig({
         secure: false,
       },
       '/api/node': {
-        target: 'http://api-node:3000',
+        target: 'http://api-node:3030',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api\/node/, ''),
         secure: false,
